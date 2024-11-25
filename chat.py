@@ -152,7 +152,7 @@ def show(navigate):
     openai.api_key = "sk-rUSqK2zQX7STu1sWSPOq01zpo63VD8we9ooEc2SYAjT3BlbkFJVzrrxq_tfSn9jCL4Drh0eZuNpepNij5vD9si5gjBwA"
 
     # Estilos personalizados com CSS para cores e design do layout
-    st.markdown("""
+    st.markdown(""""
         <style>
         /* Ajustes para o layout */
         .reportview-container {
