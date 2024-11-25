@@ -220,8 +220,7 @@ def show(navigate):
             f"Você é um assistente médico virtual. O paciente {nome_paciente} tem as seguintes medidas peso:{peso}, altura:{altura},\
             temperatura:{temperatura}, oxigenação{oxigenacao}, pressão arterial sistólica {pressao_s}, pressão arterial diastólica: {pressa_d},\
             pressão arterial diferencial: {pressao_dif} comorbidade: {comorbidade}, e  relatou os seguintes sintomas: {queixas}. "\
-            "Com base nisso, Fale o médico especialista que o paciente deve procurar e forneça\
-            uma recomendação inicial clara e simples sobre ações que o paciente deve tomar."
+            "Com base nas informações vindas da triagem, incialmente cumprimente o paciente e dê um panorama (de forma bem resumida) acerca da gravidade do quadro, em seguida fale que ele logo será atendido e pergunte se há algo que precisa complementar"
         )
         response = openai.ChatCompletion.create(
             model=st.session_state["openai_model"],
