@@ -1,7 +1,34 @@
 import streamlit as st
 import base64
+from pathlib import Path
 
 def show(navigate):
+    # Função para adicionar uma imagem de fundo a partir de um arquivo local
+    def add_bg_from_local(image_file):
+        """
+        Adiciona uma imagem de fundo ao aplicativo Streamlit a partir de um arquivo local.
+        Args:
+        image_file (str): Caminho para o arquivo de imagem local.
+        """
+        with Path(image_file).open("rb") as file:
+            encoded_string = base64.b64encode(file.read()).decode()
+        st.markdown(
+            f"""
+            <style>
+            .stApp {{
+                background-image: url(data:image/png;base64,{encoded_string});
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
+
+    # Chamando a função para adicionar o fundo
+    add_bg_from_local("C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit/bg_teste.png")
+
     # Estilos personalizados com CSS para cores e design do layout
     st.markdown("""
         <style>
@@ -9,10 +36,6 @@ def show(navigate):
             width: 90%; 
             max-width: 1400px; 
             margin: auto; 
-        }
-        .main {
-            background-color: #FFFFFF; /* fundo da área principal */
-            padding: 5px;
         }
         h1 {
             font-size: 36px;
@@ -44,6 +67,7 @@ def show(navigate):
             background-color: #0277BD;
         }
         .input-box {
+            border: 1px solid #007199;
             margin-bottom: 15px;
             width: 100%;
         }
