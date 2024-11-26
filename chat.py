@@ -30,7 +30,7 @@ def show(navigate):
         )
 
     # Adicionando a imagem de fundo
-    add_bg_from_local("C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit/bg_teste.png")
+    add_bg_from_local("C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit/Fundo_Health_Analyzer.png")
 
     # Estilos personalizados com CSS para cores e design do layout
     st.markdown("""
