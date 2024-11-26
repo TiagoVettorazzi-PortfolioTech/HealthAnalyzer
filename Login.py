@@ -79,3 +79,4 @@ def show(navigate):
 
     # Exibe a imagem (use o caminho correto da imagem)
     st.image('C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit/Figura_tela_inicial.png')
+

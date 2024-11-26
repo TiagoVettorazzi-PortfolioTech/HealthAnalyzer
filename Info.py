@@ -1,6 +1,6 @@
 import streamlit as st
-import base64
 from pathlib import Path
+import base64
 
 def show(navigate):
     # Função para adicionar uma imagem de fundo a partir de um arquivo local
@@ -32,11 +32,42 @@ def show(navigate):
     # Estilos personalizados com CSS
     st.markdown("""
         <style>
-        .reportview-container {
-            width: 90%; 
-            max-width: 1400px; 
-            margin: auto; 
+        /* Estiliza a barra lateral inteira (inclui área de expansão) */
+        section[data-testid="stSidebar"] {
+            background-color: #007199; /* Cor de fundo */
+            padding: 20px; /* Espaçamento interno */
+            border-right: 1px solid #DDD; /* Linha divisória */
         }
+
+        /* Estiliza botões na sidebar */
+        section[data-testid="stSidebar"] .sidebar-button {
+            background-color: #F1EDF2; /* Cor padrão dos botões */
+            color: #007199;
+            border: 1px solid #007199;
+            border-radius: 20px;
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+            margin-bottom: 20px; /* Espaçamento entre botões */
+        }
+        section[data-testid="stSidebar"] .button-container {
+            margin-top: 50px; /* Distância do topo para empurrar os botões para baixo */
+        }
+        section[data-testid="stSidebar"] .sidebar-button:hover {
+            background-color: #D0E8FF; /* Azul claro ao passar o mouse */
+        }
+        section[data-testid="stSidebar"] .sidebar-button:hover {
+            background-color: #D0E8FF; /* Azul claro quando selecionado */
+            font-weight: bold;
+        }
+        /* Estiliza textos dentro da barra lateral */
+        section[data-testid="stSidebar"] p {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        /* Ajusta o layout principal */
         .main {
             background-color: #FFFFFF; 
             padding: 5px;
@@ -46,35 +77,6 @@ def show(navigate):
             color: #007199;
             margin-top: -50px;
         }
-        .button-blue, .button-white {
-            background-color: #007199;
-            color: white;
-            padding: 10px;
-            border-radius: 15px;
-            width: 200px;
-            border: 1px solid #0D47A1;
-            cursor: pointer;
-            text-align: center;
-            display: inline-block;
-        }
-        .button-blue:hover, .button-white:hover {
-            background-color: #0277BD;
-        }
-        .profile-img {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            display: block;
-            margin: 0 auto;
-        }
-        .sidebar {
-            background-color: #007199; /* Cor de fundo */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            border-right: 1px solid #DDD; /* Linha divisória */
-    }
         input[type="text"], textarea, .stTextArea textarea {
             border: 1px solid #007199;
             border-radius: 8px;
@@ -86,8 +88,13 @@ def show(navigate):
 
     # Sidebar
     with st.sidebar:
-        st.image("C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit/MARCA-PORTFOLIO-TECH.png", width=150)
-        st.markdown('<div class="sidebar"><button class="button-white">Atendimentos</button><button class="button-white">Histórico</button></div>', unsafe_allow_html=True)
+        st.image("C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit/MARCA-PORTFOLIO-TECH-MONO.png", width=150)
+        
+        # Contêiner para deslocar os botões
+        st.markdown('<div class="button-container">', unsafe_allow_html=True)
+        st.markdown('<div class="sidebar-button selected">Atendimentos</div>', unsafe_allow_html=True)
+        st.markdown('<div class="sidebar-button">Histórico</div>', unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
 
     # Título da Página
     st.title("Health Analyzer")
@@ -141,27 +148,3 @@ def show(navigate):
 # Função de navegação (mock)
 def navigate(page_name):
     st.write(f"Redirecionando para a página: {page_name}")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
