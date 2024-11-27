@@ -134,19 +134,20 @@ def show(navigate):
         .stButton > button {
             color: #ffffff; /* Cor do texto do botão (laranja) */
         }
-        /* Estilo do botão em si */
-        .login-button {
-            background-color: #01579B; /* Azul escuro para o botão */
-            color: white;
-            padding: 15px 30px;
-            font-size: 18px;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-            margin-top: 20px;
+        /* Estiliza botões do Streamlit */
+        div.stButton > button {
+            background-color: #007199; /* Fundo azul */
+            color: white; /* Texto branco */
+            border: none; /* Remover borda */
+            border-radius: 15px; /* Bordas arredondadas */
+            padding: 10px 20px; /* Espaçamento interno */
+            font-size: 16px; /* Tamanho do texto */
+            font-weight: bold; /* Texto em negrito */
+            cursor: pointer; /* Alterar cursor para ponteiro */
+            width: 200px;
         }
-        .login-button:hover {
-            background-color: #0277BD;
+        div.stButton > button:hover {
+            background-color: #005f73; /* Fundo mais escuro ao passar o mouse */
         }
         .image-container {
             display: flex;
