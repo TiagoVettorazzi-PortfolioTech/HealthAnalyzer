@@ -63,7 +63,7 @@ def show(navigate):
             font-size: 16px; /* Tamanho do texto */
             font-weight: bold; /* Texto em negrito */
             cursor: pointer; /* Alterar cursor para ponteiro */
-            width: 200px;
+            width: 150px;
         }
         div.stButton > button:hover {
             background-color: #005f73; /* Fundo mais escuro ao passar o mouse */
@@ -130,13 +130,16 @@ def show(navigate):
     st.text_area("Observações", value=st.session_state["observacoes"], key="observacoes", height=50)
 
     # Botões de ação com navegação
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
     with col1:
         if st.button("Voltar"):
             navigate("Login")
     with col2:
         if st.button("Avançar"):
-            navigate("chat")
+            navigate("chat_paciente")
+    with col3:
+        if st.button("Atendimento"):
+            navigate("chat_atendimento")
 
 # Função de navegação (mock)
 def navigate(page_name):
