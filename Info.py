@@ -63,7 +63,7 @@ def show(navigate):
             font-size: 16px; /* Tamanho do texto */
             font-weight: bold; /* Texto em negrito */
             cursor: pointer; /* Alterar cursor para ponteiro */
-            width: 150px;
+            width: 200px;
         }
         div.stButton > button:hover {
             background-color: #005f73; /* Fundo mais escuro ao passar o mouse */
@@ -93,8 +93,8 @@ def show(navigate):
 
     # Inicializar valores de sessão
     session_vars = [
-        "paciente", "data_nascimento", "peso", "altura", "pressao_s", "pressao_d", 
-        "temperatura", "local_medicao", "oxigenacao", "pressao_dif", "queixas", 
+        "nome", "sobrenome", "idade","peso", "altura", "pressao_s", "pressao_d", 
+        "temperatura", "oxigenacao", "pressao_dif", "queixas", 
         "comorbidade", "alergias", "observacoes"
     ]
     for var in session_vars:
@@ -106,23 +106,23 @@ def show(navigate):
     with col1:
         st.image("C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit/Avatar.png", width=100, caption="Paciente")
     with col2:
-        st.text_input("Paciente", value=st.session_state["paciente"], key="paciente")
-        st.text_input("Data de Nascimento", value=st.session_state["data_nascimento"], key="data_nascimento")
+        st.text_input("Nome", value=st.session_state["nome"], key="nome")
+        st.text_input("Sobrenome", value=st.session_state["sobrenome"], key="sobrenome")
 
     st.write("### Informações de Saúde")
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-        st.text_input("Peso", value=st.session_state["peso"], key="peso")
-        st.text_input("Pressão Arterial Sistólica", value=st.session_state["pressao_s"], key="pressao_s")
+        st.text_input("Idade", value=st.session_state["idade"], key="idade")
+        st.text_input("Oxigenação (%)", value=st.session_state["oxigenacao"], key="oxigenacao")
     with col2:
         st.text_input("Altura (m)", value=st.session_state["altura"], key="altura")
-        st.text_input("Pressão Arterial Diastólica", value=st.session_state["pressao_d"], key="pressao_d")
+        st.text_input("Pressão Diferencial (mmHg)", value=st.session_state["pressao_dif"], key="pressao_dif")
     with col3:
-        st.text_input("Temperatura", value=st.session_state["temperatura"], key="temperatura")
-        st.text_input("Local de Medição", value=st.session_state["local_medicao"], key="local_medicao")
+        st.text_input("Peso (Kg)", value=st.session_state["peso"], key="peso")
+        st.text_input("Pressão Sistólica (mmHg)", value=st.session_state["pressao_s"], key="pressao_s")
     with col4:
-        st.text_input("Oxigenação", value=st.session_state["oxigenacao"], key="oxigenacao")
-        st.text_input("Pressão Arterial Diferencial", value=st.session_state["pressao_dif"], key="pressao_dif")
+        st.text_input("Temperatura (°C)", value=st.session_state["temperatura"], key="temperatura")
+        st.text_input("Pressão Diastólica (mmHg)", value=st.session_state["pressao_d"], key="pressao_d")
 
     st.text_area("Queixas", value=st.session_state["queixas"], key="queixas", height=50)
     st.text_area("Comorbidade", value=st.session_state["comorbidade"], key="comorbidade", height=50)
@@ -132,13 +132,10 @@ def show(navigate):
     # Botões de ação com navegação
     col1, col2, col3 = st.columns(3)
     with col1:
-        if st.button("Voltar"):
-            navigate("Login")
-    with col2:
-        if st.button("Avançar"):
+        if st.button("Versão Paciente"):
             navigate("chat_paciente")
     with col3:
-        if st.button("Atendimento"):
+        if st.button("Versão Atendimento"):
             navigate("chat_atendimento")
 
 # Função de navegação (mock)

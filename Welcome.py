@@ -249,7 +249,6 @@ def show(navigate):
 
     # Título da página e menu superior
     st.markdown("<h1>Health Analyzer</h1>", unsafe_allow_html=True)
-    st.markdown("<p style='text-align:right;margin-top: -70px;'>Contatos</p>", unsafe_allow_html=True)
 
     # Dividindo a página em duas colunas
     col1, col2, col3 = st.columns([3, 1, 3])
