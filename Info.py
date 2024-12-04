@@ -89,7 +89,7 @@ def show(navigate):
 # Sidebar
     with st.sidebar:
         st.image(
-            "C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit/MARCA-PORTFOLIO-TECH-MONO.png",
+            "C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit_teste/MARCA-PORTFOLIO-TECH-MONO.png",
             width=150,
         )
         if st.button("Cadastro"):
@@ -115,7 +115,7 @@ def show(navigate):
     # Layout dos campos
     col1, col2 = st.columns([1, 3])
     with col1:
-        st.image("C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit/Avatar.png", width=100, caption="Paciente")
+        st.image("C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit_teste/Avatar.png", width=100, caption="Paciente")
     with col2:
         st.text_input("Nome", value=st.session_state["nome"], key="nome")
         st.text_input("Sobrenome", value=st.session_state["sobrenome"], key="sobrenome")
@@ -147,8 +147,7 @@ def show(navigate):
             navigate("chat_paciente")
     with col3:
         if st.button("Versão Atendimento"):
-            navigate("Cadastro")
-
+            navigate("chat_atendimento")
 # Função de navegação (mock)
 def navigate(page_name):
     st.write(f"Redirecionando para a página: {page_name}")

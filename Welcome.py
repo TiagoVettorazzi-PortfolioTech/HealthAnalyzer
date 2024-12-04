@@ -314,7 +314,7 @@ def show(navigate):
         Carrega os dados do usuário com base na matrícula.
         """
         try:
-            with open("user_data.json", "r") as file:  # Alterei para o nome correto do arquivo
+            with open("user_data.json", "r") as file:  
                 dados = json.load(file)
                 return dados.get(matricula, {})  # Retorna os dados do usuário ou um dicionário vazio
         except FileNotFoundError:
