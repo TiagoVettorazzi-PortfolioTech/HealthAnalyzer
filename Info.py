@@ -40,18 +40,21 @@ def show(navigate):
         }
 
         /* Estiliza botões na sidebar */
-        section[data-testid="stSidebar"] .sidebar-button {
-            background-color: #F1EDF2; /* Cor padrão dos botões */
-            color: #007199;
-            border: 1px solid #007199;
-            border-radius: 20px;
+        section[data-testid="stSidebar"] div.stButton > button {
+            background-color: white; /* Fundo branco */
+            color: #007199; /* Texto azul */
+            border: 1px solid #007199; /* Borda azul */
+            border-radius: 20px; /* Bordas arredondadas */
             padding: 10px;
-            text-align: center;
+            font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
-            margin-bottom: 20px; /* Espaçamento entre botões */
+            width: 100%; /* Largura completa dentro da sidebar */
+            margin-top: 25px;
         }
-        section[data-testid="stSidebar"] .sidebar-button:hover {
-            background-color: #D0E8FF; /* Azul claro ao passar o mouse */
+        section[data-testid="stSidebar"] div.stButton > button:hover {
+            background-color: #D0E8FF; /* Fundo azul claro ao passar o mouse */
+            color: #005f73; /* Texto azul mais escuro */
         }
         /* Estiliza botões do Streamlit */
         div.stButton > button {
@@ -83,18 +86,26 @@ def show(navigate):
     """, unsafe_allow_html=True)
 
     # Sidebar
+# Sidebar
     with st.sidebar:
-        st.image("C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit/MARCA-PORTFOLIO-TECH-MONO.png", width=150)
-        st.markdown('<div class="sidebar-button selected">Atendimentos</div>', unsafe_allow_html=True)
-        st.markdown('<div class="sidebar-button">Histórico</div>', unsafe_allow_html=True)
+        st.image(
+            "C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit/MARCA-PORTFOLIO-TECH-MONO.png",
+            width=150,
+        )
+        if st.button("Cadastro"):
+            navigate("Cadastro")
+
+        if st.button("Histórico", key="sidebar-historico"):
+            navigate("chat_historico")
+
 
     # Título da Página
     st.title("Health Analyzer")
 
     # Inicializar valores de sessão
     session_vars = [
-        "nome", "sobrenome", "idade","peso", "altura", "pressao_s", "pressao_d", 
-        "temperatura", "oxigenacao", "pressao_dif", "queixas", 
+        "nome", "sobrenome", "data_nascimento","peso", "altura", "sexo", "cpf", 
+        "temperatura", "rg", "matricula", "queixas", 
         "comorbidade", "alergias", "observacoes"
     ]
     for var in session_vars:
@@ -112,20 +123,20 @@ def show(navigate):
     st.write("### Informações de Saúde")
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-        st.text_input("Idade", value=st.session_state["idade"], key="idade")
-        st.text_input("Oxigenação (%)", value=st.session_state["oxigenacao"], key="oxigenacao")
+        st.text_input("Data de Nascimento", value=st.session_state["data_nascimento"], key="data_nascimento")
+        st.text_input("Sexo", value=st.session_state["sexo"], key="sexo")
     with col2:
         st.text_input("Altura (m)", value=st.session_state["altura"], key="altura")
-        st.text_input("Pressão Diferencial (mmHg)", value=st.session_state["pressao_dif"], key="pressao_dif")
+        st.text_input("CPF", value=st.session_state["cpf"], key="cpf")
     with col3:
         st.text_input("Peso (Kg)", value=st.session_state["peso"], key="peso")
-        st.text_input("Pressão Sistólica (mmHg)", value=st.session_state["pressao_s"], key="pressao_s")
+        st.text_input("RG", value=st.session_state["rg"], key="rg")
     with col4:
         st.text_input("Temperatura (°C)", value=st.session_state["temperatura"], key="temperatura")
-        st.text_input("Pressão Diastólica (mmHg)", value=st.session_state["pressao_d"], key="pressao_d")
+        st.text_input("Matrícula", value=st.session_state["matricula"], key="matricula")
 
-    st.text_area("Queixas", value=st.session_state["queixas"], key="queixas", height=50)
-    st.text_area("Comorbidade", value=st.session_state["comorbidade"], key="comorbidade", height=50)
+    st.text_area("Descreva o que está sentindo", value=st.session_state["queixas"], key="queixas", height=50)
+    st.text_area("Comorbidade", value=st.session_state["comorbidade"], key="comorbidade", height=0)
     st.text_area("Alergias", value=st.session_state["alergias"], key="alergias", height=50)
     st.text_area("Observações", value=st.session_state["observacoes"], key="observacoes", height=50)
 
@@ -136,7 +147,7 @@ def show(navigate):
             navigate("chat_paciente")
     with col3:
         if st.button("Versão Atendimento"):
-            navigate("chat_atendimento")
+            navigate("Cadastro")
 
 # Função de navegação (mock)
 def navigate(page_name):
