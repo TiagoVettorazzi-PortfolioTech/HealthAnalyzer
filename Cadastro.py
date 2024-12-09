@@ -1,4 +1,3 @@
-
 import streamlit as st
 from pathlib import Path
 import base64
@@ -39,7 +38,7 @@ def show(navigate):
         )
 
     # Adicionando a imagem de fundo
-    add_bg_from_local("C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit/Fundo_Health_Analyzer.png")
+    add_bg_from_local("C:/Users/TiagoVettorazzi/Grupo Portfolio/Business Intelligence - Documents/Consulting/01. Projetos Ativos/DS&IA/Health Analyzer/Desenvolvimento/Fundo_Health_Analyzer.png")
 
     # Estilos personalizados com CSS global
     st.markdown("""<style>
@@ -105,7 +104,7 @@ def show(navigate):
     # Sidebar
     with st.sidebar:
         st.image(
-            "C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit/MARCA-PORTFOLIO-TECH-MONO.png",
+            "C:/Users/TiagoVettorazzi/Grupo Portfolio/Business Intelligence - Documents/Consulting/01. Projetos Ativos/DS&IA/Health Analyzer/Desenvolvimento/MARCA-PORTFOLIO-TECH-MONO.png",
             width=150,
         )
         if st.button("Cadastro"):
@@ -131,7 +130,7 @@ def show(navigate):
     # Layout dos campos
     col1, col2 = st.columns([1, 3])
     with col1:
-        st.image("C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit/Avatar.png", width=100, caption="Paciente")
+        st.image("C:/Users/TiagoVettorazzi/Grupo Portfolio/Business Intelligence - Documents/Consulting/01. Projetos Ativos/DS&IA/Health Analyzer/Desenvolvimento/Avatar.png", width=100, caption="Paciente")
     with col2:
         st.text_input("Nome", value=st.session_state["nome"], key="nome")
         st.text_input("Sobrenome", value=st.session_state["sobrenome"], key="sobrenome")
@@ -148,12 +147,12 @@ def show(navigate):
         st.text_input("Peso (Kg)", value=st.session_state["peso"], key="peso")
         st.text_input("RG", value=st.session_state["rg"], key="rg")
     with col4:
-        st.text_input("Temperatura (°C)", value=st.session_state["temperatura"], key="temperatura")
+        st.text_input("Idade", value=st.session_state["temperatura"], key="temperatura")
         matricula = st.text_input("Matrícula", value=st.session_state["matricula"], key="matricula")
 
-    st.text_area("Comorbidades", value=st.session_state["comorbidade"], key="comorbidade", height=50)
-    st.text_area("Alergias", value=st.session_state["alergias"], key="alergias", height=50)
-    st.text_area("Observações", value=st.session_state["observacoes"], key="observacoes", height=50)
+    st.text_area("Comorbidades", value=st.session_state["comorbidade"], key="comorbidade", height=88)
+    st.text_area("Alergias", value=st.session_state["alergias"], key="alergias", height=88)
+    st.text_area("Observações", value=st.session_state["observacoes"], key="observacoes", height=88)
 
     if matricula:
         if matricula not in user_data:
@@ -168,7 +167,7 @@ def show(navigate):
     col1, col2, col3 = st.columns(3)
     with col1:
         if st.button("Voltar"):
-            navigate("Info")
+            navigate("Login")
     with col3:
         if st.button("Concluir"):
             navigate("Login")

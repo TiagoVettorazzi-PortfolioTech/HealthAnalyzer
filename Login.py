@@ -27,7 +27,7 @@ def show(navigate):
         )
 
     # Adiciona a imagem de fundo chamando a função
-    add_bg_from_local("C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit/Fundo_Health_Analyzer.png")
+    add_bg_from_local("C:/Users/TiagoVettorazzi/Grupo Portfolio/Business Intelligence - Documents/Consulting/01. Projetos Ativos/DS&IA/Health Analyzer/Desenvolvimento/Fundo_Health_Analyzer.png")
 
     # Estilos personalizados com CSS para cores e design do layout
     st.markdown("""
@@ -42,10 +42,7 @@ def show(navigate):
             font-size: 18px;
             color: #000000; /* Cor para o subtítulo */
         }
-        /* Estilo específico para o botão de login */
-        .stButton > button {
-            color: #ffffff; /* Cor do texto do botão (laranja) */
-        }
+
         /* Estiliza botões do Streamlit */
         div.stButton > button {
             background-color: #007199; /* Fundo azul */
@@ -87,4 +84,4 @@ def show(navigate):
             navigate("Cadastro")
 
     # Exibe a imagem (use o caminho correto da imagem)
-    st.image('C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit/Figura_tela_inicial.png')
+    st.image('C:/Users/TiagoVettorazzi/Grupo Portfolio/Business Intelligence - Documents/Consulting/01. Projetos Ativos/DS&IA/Health Analyzer/Desenvolvimento/Figura_tela_inicial.png')

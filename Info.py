@@ -27,7 +27,7 @@ def show(navigate):
         )
 
     # Adicionando a imagem de fundo
-    add_bg_from_local("C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit/Fundo_Health_Analyzer.png")
+    add_bg_from_local("C:/Users/TiagoVettorazzi/Grupo Portfolio/Business Intelligence - Documents/Consulting/01. Projetos Ativos/DS&IA/Health Analyzer/Desenvolvimento/Fundo_Health_Analyzer.png")
 
     # Estilos personalizados com CSS global
     st.markdown("""
@@ -85,11 +85,11 @@ def show(navigate):
         </style>
     """, unsafe_allow_html=True)
 
-    # Sidebar
+
 # Sidebar
     with st.sidebar:
         st.image(
-            "C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit_teste/MARCA-PORTFOLIO-TECH-MONO.png",
+            "C:/Users/TiagoVettorazzi/Grupo Portfolio/Business Intelligence - Documents/Consulting/01. Projetos Ativos/DS&IA/Health Analyzer/Desenvolvimento/MARCA-PORTFOLIO-TECH-MONO.png",
             width=150,
         )
         if st.button("Cadastro"):
@@ -115,7 +115,7 @@ def show(navigate):
     # Layout dos campos
     col1, col2 = st.columns([1, 3])
     with col1:
-        st.image("C:/Users/TiagoVettorazzi/OneDrive - Grupo Portfolio/Área de Trabalho/Streamlit_teste/Avatar.png", width=100, caption="Paciente")
+        st.image("C:/Users/TiagoVettorazzi/Grupo Portfolio/Business Intelligence - Documents/Consulting/01. Projetos Ativos/DS&IA/Health Analyzer/Desenvolvimento/Avatar.png", width=100, caption="Paciente")
     with col2:
         st.text_input("Nome", value=st.session_state["nome"], key="nome")
         st.text_input("Sobrenome", value=st.session_state["sobrenome"], key="sobrenome")
@@ -126,7 +126,7 @@ def show(navigate):
         st.text_input("Data de Nascimento", value=st.session_state["data_nascimento"], key="data_nascimento")
         st.text_input("Sexo", value=st.session_state["sexo"], key="sexo")
     with col2:
-        st.text_input("Altura (m)", value=st.session_state["altura"], key="altura")
+        st.text_input("Idade", value=st.session_state["altura"], key="altura")
         st.text_input("CPF", value=st.session_state["cpf"], key="cpf")
     with col3:
         st.text_input("Peso (Kg)", value=st.session_state["peso"], key="peso")
@@ -135,20 +135,23 @@ def show(navigate):
         st.text_input("Temperatura (°C)", value=st.session_state["temperatura"], key="temperatura")
         st.text_input("Matrícula", value=st.session_state["matricula"], key="matricula")
 
-    st.text_area("Descreva o que está sentindo", value=st.session_state["queixas"], key="queixas", height=50)
-    st.text_area("Comorbidade", value=st.session_state["comorbidade"], key="comorbidade", height=0)
-    st.text_area("Alergias", value=st.session_state["alergias"], key="alergias", height=50)
-    st.text_area("Observações", value=st.session_state["observacoes"], key="observacoes", height=50)
+    # st.text_area("Descreva o que está sentindo", value=st.session_state["queixas"], key="queixas", height=50)
+    st.text_area("Comorbidade", value=st.session_state["comorbidade"], key="comorbidade", height=88)
+    st.text_area("Alergias", value=st.session_state["alergias"], key="alergias", height=88)
+    st.text_area("Observações", value=st.session_state["observacoes"], key="observacoes", height=88)
 
     # Botões de ação com navegação
     col1, col2, col3 = st.columns(3)
-    with col1:
-        if st.button("Versão Paciente"):
-            navigate("chat_paciente")
-    with col3:
-        if st.button("Versão Atendimento"):
+    # with col1:
+    #     if st.button("Versão Paciente"):
+    #         navigate("chat_paciente")
+    # with col3:
+    #     if st.button("Versão Atendimento"):
+    #         navigate("chat_atendimento")
+    with col2:
+        if st.button("Prosseguir"):
             navigate("chat_atendimento")
-# Função de navegação (mock)
-def navigate(page_name):
-    st.write(f"Redirecionando para a página: {page_name}")
+# # Função de navegação (mock)
+# def navigate(page_name):
+#     st.write(f"Redirecionando para a página: {page_name}")
 
