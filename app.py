@@ -5,6 +5,8 @@ import Info
 import chat_paciente
 import chat_atendimento
 import Cadastro
+import Sintomas
+import Cadastro_atualizar
 
 # Inicializar o estado de sessão
 if 'page' not in st.session_state:
@@ -27,3 +29,7 @@ elif st.session_state.page == 'chat_atendimento':
     chat_atendimento.show(navigate)
 elif st.session_state.page == 'Cadastro':
    Cadastro.show(navigate)
+elif st.session_state.page == 'Sintomas':
+    Sintomas.show(navigate)
+elif st.session_state.page == 'Cadastro_atualizar':
+   Cadastro_atualizar.show(navigate)

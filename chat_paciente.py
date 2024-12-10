@@ -98,6 +98,7 @@ def show(navigate):
     sexo = st.session_state.get("sexo", "informação não registrada")
     temperatura = st.session_state.get("temperatura", "informação não registrada")
     comorbidade = st.session_state.get("comorbidade", "informação não registrada")
+    sintomas = st.session_state.get("sintomas", "informação não registrada")
 
     # Inicializar variáveis de estado da sessão
     if "openai_model" not in st.session_state:
