@@ -105,7 +105,7 @@ def show(navigate):
     # Inicializar valores de sessão
     session_vars = [
         "nome", "sobrenome", "data_nascimento","peso", "altura", "sexo", "cpf", 
-        "temperatura", "rg", "matricula", "queixas", 
+        "temperatura", "rg", "matricula", "sintomas", 
         "comorbidade", "alergias", "observacoes"
     ]
     for var in session_vars:
@@ -142,13 +142,13 @@ def show(navigate):
 
     # Botões de ação com navegação
     col1, col2, col3 = st.columns(3)
-    # with col1:
-    #     if st.button("Versão Paciente"):
-    #         navigate("chat_paciente")
+    with col1:
+        if st.button("Voltar"):
+            navigate("Welcome")
     # with col3:
     #     if st.button("Versão Atendimento"):
     #         navigate("chat_atendimento")
-    with col2:
+    with col3:
         if st.button("Prosseguir"):
             navigate("Sintomas")
 # # # Função de navegação (mock)

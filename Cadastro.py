@@ -121,7 +121,7 @@ def show(navigate):
     # Inicializar valores de sessão
     session_vars = [
         "nome", "sobrenome", "data_nascimento", "peso", "altura", "sexo", "cpf",
-        "temperatura", "rg", "matricula", "queixas", "comorbidade", "alergias", "observacoes"
+        "temperatura", "rg", "matricula", "sintomas", "comorbidade", "alergias", "observacoes"
     ]
     for var in session_vars:
         if var not in st.session_state:
