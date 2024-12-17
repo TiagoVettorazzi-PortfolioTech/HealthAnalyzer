@@ -121,7 +121,7 @@ def show(navigate):
     # Inicializar valores de sessão
     session_vars = [
         "nome", "sobrenome", "data_nascimento", "peso", "altura", "sexo", "cpf",
-        "temperatura", "rg", "matricula", "sintomas", "comorbidade", "alergias", "observacoes"
+        "temperatura", "rg", "matricula", "sintomas", "comorbidade", "alergias", "observacoes", "foto"
     ]
     for var in session_vars:
         if var not in st.session_state:
@@ -131,6 +131,15 @@ def show(navigate):
     col1, col2 = st.columns([1, 3])
     with col1:
         st.image("C:/Users/TiagoVettorazzi/Grupo Portfolio/Business Intelligence - Documents/Consulting/01. Projetos Ativos/DS&IA/Health Analyzer/Desenvolvimento/Avatar.png", width=100, caption="Paciente")
+    # with col1:
+    #     # Adiciona a funcionalidade de upload de imagem
+    #     uploaded_file = st.file_uploader("Escolha uma imagem de avatar", type=["png", "jpg", "jpeg"])
+    #     if uploaded_file is not None:
+    #         # Salva a imagem no formato base64
+    #         img_base64 = base64.b64encode(uploaded_file.read()).decode()
+    #         st.session_state["foto"] = img_base64  # Salva a imagem no estado da sessão
+    #         st.image(uploaded_file, width=100, caption="Paciente")    
+
     with col2:
         st.text_input("Nome", value=st.session_state["nome"], key="nome")
         st.text_input("Sobrenome", value=st.session_state["sobrenome"], key="sobrenome")

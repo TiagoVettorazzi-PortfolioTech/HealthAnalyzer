@@ -106,7 +106,7 @@ def show(navigate):
     session_vars = [
         "nome", "sobrenome", "data_nascimento","peso", "altura", "sexo", "cpf", 
         "temperatura", "rg", "matricula", "sintomas", 
-        "comorbidade", "alergias", "observacoes"
+        "comorbidade", "alergias", "observacoes", "foto"
     ]
     for var in session_vars:
         if var not in st.session_state:

@@ -128,7 +128,7 @@ def show(navigate):
                 # Armazenando os dados no session_state
                 for key, value in user_data.items():
                     st.session_state[key] = value
-                navigate("Sintomas")  
+                navigate("Info")  
             else:
                 st.error("Matrícula não encontrada ou dados inválidos.")
     with col3:

@@ -3,7 +3,6 @@ import Login
 import Welcome
 import Info
 import chat_paciente
-import chat_atendimento
 import Cadastro
 import Sintomas
 import Cadastro_atualizar
@@ -25,8 +24,6 @@ elif st.session_state.page == 'Info':
     Info.show(navigate)
 elif st.session_state.page == 'chat_paciente':
     chat_paciente.show(navigate)
-elif st.session_state.page == 'chat_atendimento':
-    chat_atendimento.show(navigate)
 elif st.session_state.page == 'Cadastro':
    Cadastro.show(navigate)
 elif st.session_state.page == 'Sintomas':
